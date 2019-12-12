@@ -15,12 +15,12 @@ namespace Karna.Magnification
         private RECT magWindowRect = new RECT();
         private System.Windows.Forms.Timer timer;
 
-        public Magnifier(Form form)
+        public Magnifier(Form form, float magnification)
         {
             if (form == null)
                 throw new ArgumentNullException("form");
 
-            magnification = 2.0f;
+            this.magnification = magnification;
             this.form = form;
             this.form.Resize += new EventHandler(form_Resize);
             this.form.FormClosing += new FormClosingEventHandler(form_FormClosing);
